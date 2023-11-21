@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    // Sample request:
+    // curl -vX POST "http://localhost:8082/order/placeOrder" -H "Content-Type:application/json" --data '{"productId":2, "totalAmount":23, "quantity": 2, "paymentMode":"CASH"}' | json_pp
     @PostMapping("/placeOrder")
     public ResponseEntity<OrderCreateResponse> createOrder(@RequestBody OrderCreateRequest request){
         return new ResponseEntity<>(orderService.createOrder(request), HttpStatus.CREATED);
