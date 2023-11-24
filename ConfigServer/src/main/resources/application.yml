@@ -4,6 +4,8 @@ spring:
   application:
     name: CONFIG-SERVER
 #============= If you want to read config from git repository uncomment these:
+#  profiles:
+#    active: git
 #  cloud:
 #    config:
 #      server:
