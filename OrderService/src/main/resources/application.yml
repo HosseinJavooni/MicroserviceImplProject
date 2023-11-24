@@ -13,3 +13,16 @@ spring:
       ddl-auto: update
   application:
     name: ORDER-SERVICE
+#================================= For Cloud config (in my case Local config server)
+  config:
+    import: configserver:http://localhost:8191
+#================================= Uncomment lines below when you don't want to get config from cloud config server
+#  cloud:
+#    config:
+#      enabled: false
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}

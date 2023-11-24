@@ -13,6 +13,13 @@ spring:
       ddl-auto: update
   application:
     name: PRODUCT-SERVICE
+#================================= For Cloud config (in my case Local config server)
+  config:
+    import: configserver:http://localhost:8191
+#================================= uncomment lines below when you don't want to get config from cloud config server
+#  cloud:
+#    config:
+#      enabled: false
 #eureka:
 #  client:
 #    fetch-registry: true
