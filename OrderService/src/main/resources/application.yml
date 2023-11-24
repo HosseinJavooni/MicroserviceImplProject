@@ -15,7 +15,10 @@ spring:
     name: ORDER-SERVICE
 #================================= For Cloud config (in my case Local config server)
   config:
+    #----------read from Local config
     import: configserver:http://localhost:8191
+    #----------read from Git
+    #import: https://github.com/HosseinJavooni/springAppConfig
 #================================= Uncomment lines below when you don't want to get config from cloud config server
 #  cloud:
 #    config:

@@ -1,11 +1,24 @@
 server:
-  port: 9296
-
+  port: 8191
 spring:
   application:
     name: CONFIG-SERVER
+#============= If you want to read config from git repository uncomment these:
   cloud:
     config:
       server:
         git:
-          uir:
+          uri: https://github.com/HosseinJavooni/springAppConfig
+          clone-on-start: true
+          default-label: master #git branch
+#=============================================================================
+#============ If you want to read config from the config server itself use these:
+#  profiles:
+#    active: native
+#eureka:
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
+#===============================================================================
